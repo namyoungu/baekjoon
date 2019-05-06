@@ -1,5 +1,4 @@
 #include <cstdio>
-
 int n, m, s[9];
 
 void go(int dep) {
@@ -12,9 +11,10 @@ void go(int dep) {
 	}
 
 	for (int i = 1; i <= n; i++) {
-		if (dep > 0 && s[dep - 1] >= i) {
+		if (dep > 0 && s[dep - 1] > i) {
 			continue;
 		}
+
 		s[dep] = i;
 
 		go(dep + 1);
